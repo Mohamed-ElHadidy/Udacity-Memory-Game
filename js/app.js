@@ -11,7 +11,13 @@ const icons = ["fa fa-anchor", "fa fa-bolt", "fa fa-bomb", "fa fa-bicycle",
 //// Global Variables ////
 //////////////////////////
 
+// cards board
 const cardsBoard = document.querySelector('#cards-board');
+
+// Moves
+let moves = 0;
+const movesCounter = document.querySelector(".moves");
+
 
 ////////////////////////////
 ////// Cards array //////
@@ -108,6 +114,8 @@ function respondToTheClick(e) {
     }
     // checking cards when their are two cards in checkCards array
     if (checkCards.length === 2) {
+        //counting the moves
+        movesNum();
         // if the cards are matched call the matched function
         if (checkCards[0].innerHTML === checkCards[1].innerHTML) {
             matched();
@@ -137,4 +145,17 @@ function notMatched() {
     checkCards[1].classList.remove("open", "show");
     // remove cards from checkCards array
     checkCards = [];
+}
+
+///////////////////////////////
+////////// Moves ///////////
+////////////////////////////
+
+function movesNum() {
+    moves++;
+    if (moves === 1) {
+        movesCounter.innerHTML = `1 Move`;
+    } else {
+        movesCounter.innerHTML = `${moves} Moves`;
+    }
 }
