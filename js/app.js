@@ -7,6 +7,13 @@ const icons = ["fa fa-anchor", "fa fa-bolt", "fa fa-bomb", "fa fa-bicycle",
     "fa fa-cube", "fa fa-diamond", "fa fa-leaf", "fa fa-paper-plane-o",
 ];
 
+/////////////////////////////
+//// Global Variables ////
+//////////////////////////
+
+const cardsBoard = document.querySelector('#cards-board');
+
+
 /*
  * Display the cards on the page
  *   - shuffle the list of cards using the provided "shuffle" method below
@@ -14,7 +21,10 @@ const icons = ["fa fa-anchor", "fa fa-bolt", "fa fa-bomb", "fa fa-bicycle",
  *   - add each card's HTML to the page
  */
 
-// Shuffle function from http://stackoverflow.com/a/2450976
+////////////////////////////////////////////////////////////////////////
+// Shuffle function from http://stackoverflow.com/a/2450976//
+/////////////////////////////////////////////////////////////////////
+
 function shuffle(array) {
     var currentIndex = array.length,
         temporaryValue, randomIndex;
@@ -30,6 +40,7 @@ function shuffle(array) {
     return array;
 }
 
+//////////////////////////////////////////////////////////////////
 
 /*
  * set up the event listener for a card. If a card is clicked:
@@ -41,3 +52,45 @@ function shuffle(array) {
  *    + increment the move counter and display it on the page (put this functionality in another function that you call from this one)
  *    + if all cards have matched, display a message with the final score (put this functionality in another function that you call from this one)
  */
+
+////////////////
+
+creatCardsBoard();
+
+///////////////
+
+///////////////////////////////////////////////////////////////
+/////// Deck Creation and adding EventListener ////////
+////////////////////////////////////////////////////////////
+
+function creatCardsBoard() {
+
+    // To clear the old card board 
+    cardsBoard.innerHTML = "";
+    // creat new ul element to append it to "cardsBoard"
+    const myNewDeck = document.createElement('ul');
+    myNewDeck.classList.add('deck');
+    // shuffle the icons list
+    let shufIcons = shuffle(icons);
+    for (let i = 0; i < shufIcons.length; i++) {
+        const newLi = document.createElement('li');
+        newLi.classList.add('card');
+        newLi.innerHTML = `<i class="${shufIcons[i]}"></i>`;
+        myNewDeck.appendChild(newLi);
+    }
+    cardsBoard.append(myNewDeck);
+    // add event listener to the cards board
+    cardsBoard.addEventListener('click', respondToTheClick);
+}
+
+///////////////////////////
+//// Opening Cards /// 
+////////////////////////
+
+function respondToTheClick(e) {
+
+    let selectedCard = e.target;
+
+    selectedCard.classList.add("open", "show");
+
+}
