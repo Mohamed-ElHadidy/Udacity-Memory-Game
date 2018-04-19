@@ -13,6 +13,12 @@ const icons = ["fa fa-anchor", "fa fa-bolt", "fa fa-bomb", "fa fa-bicycle",
 
 const cardsBoard = document.querySelector('#cards-board');
 
+////////////////////////////
+////// Cards array //////
+////////////////////////
+
+let checkCards = [];
+let matchedCards = [];
 
 /*
  * Display the cards on the page
@@ -90,7 +96,45 @@ function creatCardsBoard() {
 function respondToTheClick(e) {
 
     let selectedCard = e.target;
+    // to make sure that the clicked target is a card & 
+    // not an opened/matched card
+    if (selectedCard.classList.contains("card") &&
+        !selectedCard.classList.contains("open", "show", "match")) {
+        // add classes open and show to the selected card
+        selectedCard.classList.add("open", "show");
+        // add the selected card to checkCards array to check if it's
+        // like the next selected card or not
+        checkCards.push(selectedCard);
+    }
+    // checking cards when their are two cards in checkCards array
+    if (checkCards.length === 2) {
+        // if the cards are matched call the matched function
+        if (checkCards[0].innerHTML === checkCards[1].innerHTML) {
+            matched();
+        } else {
+            // if they aren't matched call the notMatched function
+            // after 800ms to allow the player to see the second card
+            setTimeout(notMatched, 800);
+        }
+    }
+}
 
-    selectedCard.classList.add("open", "show");
-
+// if the cards are matched 
+function matched() {
+    // add class match to both cards
+    checkCards[0].classList.add("match");
+    checkCards[1].classList.add("match");
+    // push both cards to the matchedCards array
+    matchedCards.push(checkCards[0]);
+    matchedCards.push(checkCards[1]);
+    // remove cards from checkCards array
+    checkCards = [];
+}
+// if the cards are not matched 
+function notMatched() {
+    // remove open & show classes from both cards
+    checkCards[0].classList.remove("open", "show");
+    checkCards[1].classList.remove("open", "show");
+    // remove cards from checkCards array
+    checkCards = [];
 }
