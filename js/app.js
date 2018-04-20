@@ -35,6 +35,10 @@ const secondsTimer = document.querySelector(".seconds");
 let timeCounter;
 let timerOn = false;
 
+// Restart
+const restart = document.querySelector(".restart");
+
+
 ////////////////////////////
 ////// Cards array //////
 ////////////////////////
@@ -217,7 +221,7 @@ function startTimer() {
     // to start the timer to avoid delay
     if (seconds == 0) {
         seconds++;
-    } 
+   } 
 
     timeCounter = setInterval(function () {
 
@@ -239,3 +243,38 @@ function startTimer() {
         }
     }, 1000);
 }
+
+////////////////////////////////////////////////////////
+/////////////////// Restart Game ///////////////////
+////////////////////////////////////////////////////
+
+function restartGame() {
+    // set it to false in order to fulfil the condition 
+    // at line 130 to start the timer after opening the 
+    // first card after restarting the game
+    timerOn = false;
+    // reset the moves to zero
+    moves = 0;
+    movesCounter.innerHTML = `0 Moves`;
+    // empty both arrays 
+    matchedCards = [];
+    checkCards = [];
+    // to clear the old board, create a new 
+    // shuffled  cards board  
+    creatCardsBoard();
+    // to stop the timer
+    clearInterval(timeCounter);
+    // reset the timer to zero
+    seconds = 0;
+    minutes = 0;
+    hours = 0;
+    secondsTimer.innerText = "00";
+    minuteTimer.innerText = " 00";
+    hourTimer.innerText = "00";
+    // reset the color of the stars
+    stars[5].classList.remove('grey');
+    stars[3].classList.remove('grey');
+}
+
+restart.addEventListener("click", restartGame);
+
