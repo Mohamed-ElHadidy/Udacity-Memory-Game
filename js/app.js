@@ -18,6 +18,8 @@ const cardsBoard = document.querySelector('#cards-board');
 let moves = 0;
 const movesCounter = document.querySelector(".moves");
 
+// Rating
+const stars = document.querySelector('.stars').childNodes;
 
 ////////////////////////////
 ////// Cards array //////
@@ -158,4 +160,18 @@ function movesNum() {
     } else {
         movesCounter.innerHTML = `${moves} Moves`;
     }
+    starsRating();
+}
+
+function starsRating() {
+
+    if (moves === 12) {
+
+        stars[5].classList.add('grey');
+
+    } else if (moves === 20) {
+
+        stars[3].classList.add('grey');
+    }
+
 }
