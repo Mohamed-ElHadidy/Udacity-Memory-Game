@@ -21,6 +21,20 @@ const movesCounter = document.querySelector(".moves");
 // Rating
 const stars = document.querySelector('.stars').childNodes;
 
+// Timer
+let seconds = 0;
+let minutes = 0;
+let hours = 0;
+
+const timer = document.querySelector(".timer");
+
+const hourTimer = document.querySelector(".hour");
+const minuteTimer = document.querySelector(".minute");
+const secondsTimer = document.querySelector(".seconds");
+
+let timeCounter;
+let timerOn = false;
+
 ////////////////////////////
 ////// Cards array //////
 ////////////////////////
@@ -108,6 +122,11 @@ function respondToTheClick(e) {
     // not an opened/matched card
     if (selectedCard.classList.contains("card") &&
         !selectedCard.classList.contains("open", "show", "match")) {
+        // to start the timer once 
+        if (timerOn === false) {
+            startTimer();
+            timerOn = true;
+        }
         // add classes open and show to the selected card
         selectedCard.classList.add("open", "show");
         // add the selected card to checkCards array to check if it's
@@ -169,13 +188,54 @@ function movesNum() {
 //////////////////////////////////
 
 function starsRating() {
- // if the moves number is between 12 and 19
+    // if the moves number is between 12 and 19
     if (moves === 12) {
         // change the color of the third star to grey
         stars[5].classList.add('grey');
- // if the moves number is 20 or more 
+        // if the moves number is 20 or more 
     } else if (moves === 20) {
         // change the color of the second star to grey
         stars[3].classList.add('grey');
     }
+}
+
+//////////////////////////////////////
+///////// Timer function //////////
+////////////////////////////////////
+
+// to fix timer by adding zero if the 
+// number is less than ten 
+function fix(x, y) {
+    if (x < 10) {
+        return (y.innerHTML = ` 0${x}`);
+    } else {
+        return (y.innerHTML = ` ${x}`);
+    }
+}
+
+function startTimer() {
+    // to start the timer to avoid delay
+    if (seconds == 0) {
+        seconds++;
+    } 
+
+    timeCounter = setInterval(function () {
+
+        hourTimer.innerHTML = `${hours}`;
+        minuteTimer.innerHTML = ` ${minutes} `;
+        secondsTimer.innerHTML = ` ${seconds} `;
+
+        fix(seconds, secondsTimer);
+        fix(minutes, minuteTimer);
+        fix(hours, hourTimer);
+
+        seconds++;
+        if (seconds == 60) {
+            minutes++;
+            seconds = 0;
+        } else if (minutes == 60) {
+            hours++;
+            minutes = 0;
+        }
+    }, 1000);
 }
