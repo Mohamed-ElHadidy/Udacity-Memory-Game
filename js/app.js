@@ -139,6 +139,9 @@ function respondToTheClick(e) {
     }
     // checking cards when their are two cards in checkCards array
     if (checkCards.length === 2) {
+        // to prevent opening more than two cards till the
+        // checking process is finished
+        cardsBoard.classList.add("stop-event");
         //counting the moves
         movesNum();
         // if the cards are matched call the matched function
@@ -162,6 +165,8 @@ function matched() {
     matchedCards.push(checkCards[1]);
     // remove cards from checkCards array
     checkCards = [];
+    // to allow opening and checking two cards again
+    cardsBoard.classList.remove("stop-event");
 }
 // if the cards are not matched 
 function notMatched() {
@@ -170,6 +175,8 @@ function notMatched() {
     checkCards[1].classList.remove("open", "show");
     // remove cards from checkCards array
     checkCards = [];
+    // to allow opening and checking two cards again
+    cardsBoard.classList.remove("stop-event");
 }
 
 ///////////////////////////////

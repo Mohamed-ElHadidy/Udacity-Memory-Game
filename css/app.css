@@ -115,3 +115,7 @@ h1 {
 .grey {
     color: #d3d3d3;
 }
+/* to stop event listener after opening two cards */
+.stop-event {
+    pointer-events: none;
+}
