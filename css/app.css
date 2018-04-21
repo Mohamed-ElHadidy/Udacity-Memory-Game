@@ -17,7 +17,8 @@ body {
 }
 
 body {
-    background: #ffffff url('../img/geometry2.png'); /* Background pattern from Subtle Patterns */
+    background: #ffffff url('../img/geometry2.png');
+    /* Background pattern from Subtle Patterns */
     font-family: 'Coda', cursive;
 }
 
@@ -88,7 +89,7 @@ h1 {
 .score-panel {
     display: flex;
     justify-content: space-between;
-   /* text-align: left;*/
+    /* text-align: left;*/
     width: 345px;
     margin-bottom: 10px;
 }
@@ -110,12 +111,60 @@ h1 {
     cursor: pointer;
 }
 
-
 /* to change the color of the stars*/
+
 .grey {
     color: #d3d3d3;
 }
+
 /* to stop event listener after opening two cards */
+
 .stop-event {
     pointer-events: none;
+}
+
+/* Media Queries  */
+
+@media screen and (max-width: 650px) {
+    .score-panel {
+        width: 90%;
+        margin: 0 auto;
+        flex-basis: 40%;
+    }
+    .deck {
+        width: 95%;
+        padding: 3%;
+        margin: 0 auto;
+        min-height: 100%;
+    }
+    .deck .card {
+        height: 92px;
+        margin-top: 2%;
+    }
+}
+
+@media screen and (max-width: 368px) {
+    .deck .card {
+        width: 68px;
+        height: 92px;
+        margin-top: 2%;
+    }
+}
+
+@media screen and (min-width: 369px) and (max-width: 460px) {
+    .deck .card {
+        width: 82px;
+    }
+}
+
+@media screen and (min-width: 461px) and (max-width: 516px) {
+    .deck .card {
+        width: 92px;
+    }
+}
+
+@media screen and (min-width: 517px) and (max-width: 580px) {
+    .deck .card {
+        width: 105px;
+    }
 }
