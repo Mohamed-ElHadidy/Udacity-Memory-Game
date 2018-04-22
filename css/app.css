@@ -150,6 +150,23 @@ h1 {
     list-style: none;
 }
 
+.btn-modal {
+    color: #f3f7f7;
+    background-color: #02b3e4;
+    width: 120px;
+    height: 30px;
+    border: 1px solid #e9edef;
+    border-radius: 5px;
+    box-shadow: 1px 2px 4px rgba(235, 235, 235, 0.48);
+    font-size: 1em;
+}
+
+.btn-modal:hover {
+    background-color: #f3f7f7;
+    color: #02b3e4;
+    transition: all 0.5s ease;
+}
+
 /* Media Queries  */
 
 @media screen and (max-width: 650px) {
