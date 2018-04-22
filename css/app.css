@@ -191,9 +191,10 @@ h1 {
     }
 
     .modal-box {
-        width: 80%;
-        left: 10%;
+        width: 90%;
+        left: 5%;
         top: 25%;
+        margin: auto 0;
     }
 }
 
