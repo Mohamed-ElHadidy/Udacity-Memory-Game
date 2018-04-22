@@ -162,6 +162,10 @@ h1 {
     list-style: none;
 }
 
+.modal-box h1 {
+    margin: auto;
+}
+
 .btn-modal {
     color: #f3f7f7;
     background-color: #02b3e4;
