@@ -304,7 +304,7 @@ function wohoo() {
         // to add the stats to the modal
         timeModal.innerText = timer.innerText;
         ratingModal.innerHTML = starsForRate.innerHTML;
-        movesModal.innerHTML = movesCounter.innerHTML;
+        movesModal.innerHTML = movesCounter.innerHTML.slice(0, 3);
         //stop the timer and show the modal
         clearInterval(timeCounter);
         modal.style.display = 'block';
