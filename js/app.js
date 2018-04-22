@@ -20,6 +20,7 @@ const movesCounter = document.querySelector(".moves");
 
 // Rating
 const stars = document.querySelector('.stars').childNodes;
+const starsForRate = document.querySelector('.stars');
 
 // Timer
 let seconds = 0;
@@ -40,6 +41,9 @@ const restart = document.querySelector(".restart");
 
 // Modal
 const modal = document.querySelector('.modal');
+const timeModal = document.querySelector('.time-modal');
+const ratingModal = document.querySelector('.rating-modal');
+const movesModal = document.querySelector('.moves-modal');
 
 ////////////////////////////
 ////// Cards array //////
@@ -296,6 +300,10 @@ restart.addEventListener("click", restartGame);
 function wohoo() {
     //when the player finish the game
     if (matchedCards.length === 16) {
+        // to add the stats to the modal
+        timeModal.innerText = timer.innerText;
+        ratingModal.innerHTML = starsForRate.innerHTML;
+        movesModal.innerHTML = movesCounter.innerHTML;
         //stop the timer and show the modal
         clearInterval(timeCounter);
         modal.style.display = 'block';
