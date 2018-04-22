@@ -1,3 +1,5 @@
+@import url('https://fonts.googleapis.com/css?family=Acme');
+
 html {
     box-sizing: border-box;
 }
@@ -19,7 +21,8 @@ body {
 body {
     background: #ffffff url('../img/geometry2.png');
     /* Background pattern from Subtle Patterns */
-    font-family: 'Coda', cursive;
+    font-family: 'Acme', sans-serif;
+   /* font-family: 'Coda', cursive;*/
 }
 
 .container {
@@ -30,8 +33,9 @@ body {
 }
 
 h1 {
-    font-family: 'Open Sans', sans-serif;
+    font: 40px/1.5 'Acme', sans-serif;
     font-weight: 300;
+    margin: 12px;
 }
 
 /*
@@ -99,6 +103,7 @@ h1 {
     /* text-align: left;*/
     width: 345px;
     margin-bottom: 10px;
+    font: 18px/1.5 'Acme', sans-serif;
 }
 
 .score-panel .stars {
