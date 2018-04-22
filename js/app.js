@@ -44,6 +44,7 @@ const modal = document.querySelector('.modal');
 const timeModal = document.querySelector('.time-modal');
 const ratingModal = document.querySelector('.rating-modal');
 const movesModal = document.querySelector('.moves-modal');
+const btnModal = document.querySelector('.btn-modal');
 
 ////////////////////////////
 ////// Cards array //////
@@ -309,3 +310,10 @@ function wohoo() {
         modal.style.display = 'block';
     }
 }
+
+btnModal.addEventListener('click', function () {
+    // to close the modal and restart the game
+    modal.style.display = 'none';
+    restartGame();
+    timerOn = false;
+})
