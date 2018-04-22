@@ -38,6 +38,8 @@ let timerOn = false;
 // Restart
 const restart = document.querySelector(".restart");
 
+// Modal
+const modal = document.querySelector('.modal');
 
 ////////////////////////////
 ////// Cards array //////
@@ -152,6 +154,7 @@ function respondToTheClick(e) {
             // after 800ms to allow the player to see the second card
             setTimeout(notMatched, 800);
         }
+        wohoo();
     }
 }
 
@@ -285,3 +288,16 @@ function restartGame() {
 
 restart.addEventListener("click", restartGame);
 
+
+////////////////////////////////////////////////////////
+/////////////// Win Modal Function ///////////////
+////////////////////////////////////////////////////
+
+function wohoo() {
+    //when the player finish the game
+    if (matchedCards.length === 16) {
+        //stop the timer and show the modal
+        clearInterval(timeCounter);
+        modal.style.display = 'block';
+    }
+}
