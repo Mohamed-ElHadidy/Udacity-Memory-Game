@@ -53,13 +53,6 @@ const btnModal = document.querySelector('.btn-modal');
 let checkCards = [];
 let matchedCards = [];
 
-/*
- * Display the cards on the page
- *   - shuffle the list of cards using the provided "shuffle" method below
- *   - loop through each card and create its HTML
- *   - add each card's HTML to the page
- */
-
 ////////////////////////////////////////////////////////////////////////
 // Shuffle function from http://stackoverflow.com/a/2450976//
 /////////////////////////////////////////////////////////////////////
@@ -81,22 +74,7 @@ function shuffle(array) {
 
 //////////////////////////////////////////////////////////////////
 
-/*
- * set up the event listener for a card. If a card is clicked:
- *  - display the card's symbol (put this functionality in another function that you call from this one)
- *  - add the card to a *list* of "open" cards (put this functionality in another function that you call from this one)
- *  - if the list already has another card, check to see if the two cards match
- *    + if the cards do match, lock the cards in the open position (put this functionality in another function that you call from this one)
- *    + if the cards do not match, remove the cards from the list and hide the card's symbol (put this functionality in another function that you call from this one)
- *    + increment the move counter and display it on the page (put this functionality in another function that you call from this one)
- *    + if all cards have matched, display a message with the final score (put this functionality in another function that you call from this one)
- */
-
-////////////////
-
 creatCardsBoard();
-
-///////////////
 
 ///////////////////////////////////////////////////////////////
 /////// Deck Creation and adding EventListener ////////
@@ -195,9 +173,9 @@ function movesNum() {
     // to increment moves number after opening two cards
     moves++;
     if (moves === 1) {
-        movesCounter.innerHTML = `1 Move`;
+        movesCounter.innerHTML = `1  Move`;
     } else {
-        movesCounter.innerHTML = `${moves} Moves`;
+        movesCounter.innerHTML = `${moves}  Moves`;
     }
     starsRating();
 }
@@ -236,14 +214,14 @@ function startTimer() {
     // to start the timer to avoid delay
     if (seconds == 0) {
         seconds++;
-   } 
+    }
 
     timeCounter = setInterval(function () {
 
         hourTimer.innerHTML = `${hours}`;
         minuteTimer.innerHTML = ` ${minutes} `;
         secondsTimer.innerHTML = ` ${seconds} `;
-
+        // fix each part of the timer
         fix(seconds, secondsTimer);
         fix(minutes, minuteTimer);
         fix(hours, hourTimer);
@@ -290,9 +268,8 @@ function restartGame() {
     stars[5].classList.remove('grey');
     stars[3].classList.remove('grey');
 }
-
+// to restart  the game when the player click on the restart icon
 restart.addEventListener("click", restartGame);
-
 
 ////////////////////////////////////////////////////////
 /////////////// Win Modal Function ///////////////
@@ -317,3 +294,22 @@ btnModal.addEventListener('click', function () {
     restartGame();
     timerOn = false;
 })
+
+////////////////////////////////////////////////////
+/*
+ * Display the cards on the page
+ *   - shuffle the list of cards using the provided "shuffle" method below
+ *   - loop through each card and create its HTML
+ *   - add each card's HTML to the page
+ */
+
+/*
+ * set up the event listener for a card. If a card is clicked:
+ *  - display the card's symbol (put this functionality in another function that you call from this one)
+ *  - add the card to a *list* of "open" cards (put this functionality in another function that you call from this one)
+ *  - if the list already has another card, check to see if the two cards match
+ *    + if the cards do match, lock the cards in the open position (put this functionality in another function that you call from this one)
+ *    + if the cards do not match, remove the cards from the list and hide the card's symbol (put this functionality in another function that you call from this one)
+ *    + increment the move counter and display it on the page (put this functionality in another function that you call from this one)
+ *    + if all cards have matched, display a message with the final score (put this functionality in another function that you call from this one)
+ */
