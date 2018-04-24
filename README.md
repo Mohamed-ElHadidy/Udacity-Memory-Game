@@ -1,12 +1,14 @@
 # Memory Game Project
 
+<img src="img/play.gif" alt="">
+
 ## Table of Contents
 
 * [Instructions](#instructions)
 * [How The Game Works](#how-the-game-works)
 * [Contributing](#contributing)
 
-## Instructions
+## General 
 
 The starter project has some HTML and CSS styling to display a static version of the Memory Game project. You'll need to convert this project from a static project to an interactive one. This will require modifying the HTML and CSS files, but primarily the JavaScript file.
 
@@ -14,11 +16,6 @@ To get started, open `js/app.js` and start building out the app's functionality
 
 For specific, detailed instructions, look at the project instructions in the [Udacity Classroom](https://classroom.udacity.com/me).
 
-## Contributing
-
-This repository is the starter code for _all_ Udacity students. Therefore, we most likely will not accept pull requests.
-
-For details, check out [CONTRIBUTING.md](CONTRIBUTING.md).
 
 ## How The Game Works
 
@@ -36,7 +33,7 @@ Each turn:
 The stars rating depends on the number of moves:
 *  :star::star::star: If the moves  are between 8 and 11.
 * :star::star: If the moves  are between 12 and 19.
-* :star: If the moves  are more than 20.
+* :star: If the moves  are  20 or more.
 
 The game ends once all cards have been correctly matched.
 The player could restart the game at any time by clicking on the restart icon.
@@ -47,6 +44,10 @@ The player could restart the game at any time by clicking on the restart icon.
 * Icons from Font [fontawesome](https://fontawesome.com/v4.7.0/icons/) - [cdn](https://maxcdn.bootstrapcdn.com/font-awesome/4.6.1/css/font-awesome.min.css).
 * [Acme](https://fonts.google.com/specimen/Acme) from Google Fonts.
 
+## Contributing
 
+This repository is the starter code for _all_ Udacity students. Therefore, we most likely will not accept pull requests.
+
+For details, check out [CONTRIBUTING.md](CONTRIBUTING.md).
 
 
