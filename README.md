@@ -6,6 +6,7 @@
 * [General](#general)
 * [How The Game Works](#how-the-game-works)
 * [Resources](#resources)
+* [License](#license)
 
 ## General 
 
@@ -44,6 +45,8 @@ The player could restart the game at any time by clicking on the restart icon.
 * Icons from Font [fontawesome](https://fontawesome.com/v4.7.0/icons/) - [cdn](https://maxcdn.bootstrapcdn.com/font-awesome/4.6.1/css/font-awesome.min.css).
 * [Acme](https://fonts.google.com/specimen/Acme) from Google Fonts.
 
+## License
 
+* This project is licensed under the terms of the [MIT](https://github.com/Mohamed-ElHadidy/Udacity-Memory-Game/blob/master/LICENSE) license.
 
 
