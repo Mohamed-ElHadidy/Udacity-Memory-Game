@@ -1,21 +1,21 @@
 # Memory Game Project
 
-<img src="img/play.gif" alt="">
 
 ## Table of Contents
 
-* [Instructions](#instructions)
+* [General](#general)
 * [How The Game Works](#how-the-game-works)
-* [Contributing](#contributing)
+* [Resources](#resources)
 
 ## General 
 
-The starter project has some HTML and CSS styling to display a static version of the Memory Game project. You'll need to convert this project from a static project to an interactive one. This will require modifying the HTML and CSS files, but primarily the JavaScript file.
+Udacity Front-End Developer Nanodegree Third Project
 
-To get started, open `js/app.js` and start building out the app's functionality
+* Live preview https://mohamed-elhadidy.github.io/Udacity-Memory-Game/ 
 
-For specific, detailed instructions, look at the project instructions in the [Udacity Classroom](https://classroom.udacity.com/me).
+* Game preview 
 
+<img src="img/play.gif" alt="Game-preview">
 
 ## How The Game Works
 
@@ -44,10 +44,6 @@ The player could restart the game at any time by clicking on the restart icon.
 * Icons from Font [fontawesome](https://fontawesome.com/v4.7.0/icons/) - [cdn](https://maxcdn.bootstrapcdn.com/font-awesome/4.6.1/css/font-awesome.min.css).
 * [Acme](https://fonts.google.com/specimen/Acme) from Google Fonts.
 
-## Contributing
 
-This repository is the starter code for _all_ Udacity students. Therefore, we most likely will not accept pull requests.
-
-For details, check out [CONTRIBUTING.md](CONTRIBUTING.md).
 
 
